@@ -1,13 +1,20 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
-const MyGraphQLSchema = require('./schema')
+const cors = require('cors');
+const MyGraphQLSchema = require('./schema');
 
 const app = express();
 
-app.use('/graphql', graphqlHTTP({
-  schema: MyGraphQLSchema,
-  graphiql: true
-}));
+// Allow cross-orgin
+app.use(cors());
+
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema: MyGraphQLSchema,
+    graphiql: true
+  })
+);
 
 const PORT = process.env.PORT || 5000;
 
