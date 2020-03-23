@@ -1,4 +1,4 @@
 # React-Apollo-GraphQL
 
-backend: GraphQL, express
-frontend: React, Apollo, Bootstrap
+Backend: GraphQL, express.  
+Frontend: React, Apollo, Bootstrap
